@@ -99,7 +99,7 @@ public static class MC_Static_Navigation
         if (isSuspend(_posA) || isSuspend(_posB))
             return false;
 
-        Algo_Astar(_posA, _posB, Service_World.renderSize, out List<Vector3> _result);
+        Algo_Astar(_posA, _posB, out List<Vector3> _result);
         return _result.Count > 0;
     }
 
@@ -267,7 +267,7 @@ public static class MC_Static_Navigation
     /// <summary>
     /// A*寻路算法，返回一整个路径
     /// </summary>
-    public static void Algo_Astar(Vector3 _StartPos, Vector3 _EndPos, int _RenderSize, out List<Vector3> _result)
+    public static void Algo_Astar(Vector3 _StartPos, Vector3 _EndPos, out List<Vector3> _result)
     {
         //Clear
         _result = new List<Vector3>();
@@ -277,9 +277,10 @@ public static class MC_Static_Navigation
             return;
 
         //规范化起点和终点
+        int _renderSize = 2;
         _StartPos = GetCenterVector3(_StartPos);
         _EndPos = GetCenterVector3(_EndPos);
-        int maxStep = _RenderSize * (int)(_EndPos - _StartPos).magnitude * TerrainData.ChunkWidth;
+        int maxStep = _renderSize * (int)(_EndPos - _StartPos).magnitude * TerrainData.ChunkWidth;
 
         //创建开放列表 / 关闭列表
         List<AstarNode> OpenList = new List<AstarNode>();

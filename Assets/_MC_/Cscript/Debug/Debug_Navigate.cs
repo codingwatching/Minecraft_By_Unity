@@ -202,7 +202,7 @@ namespace MC_Debug
             {
                 //Chase_Astar(StartPos.transform.position, EndPos.transform.position, 4, out List<Vector3> _result);
 
-                Algo_Astar(StartPos.transform.position, EndPos.transform.position, 4, out List<Vector3> _result);
+                Algo_Astar(StartPos.transform.position, EndPos.transform.position, out List<Vector3> _result);
 
                 _Astar_LineResultPath = new List<Vector3>(_result);
                 Toggle_StartAstar = false;

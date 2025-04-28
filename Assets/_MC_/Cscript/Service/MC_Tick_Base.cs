@@ -42,7 +42,6 @@ public class MC_Tick_Base : MonoBehaviour
         }
 
     }
-
     private void TickCheck(Game_State currentState)
     {
         switch (currentState)
@@ -61,19 +60,65 @@ public class MC_Tick_Base : MonoBehaviour
                 break;
         }
     }
-
     public virtual void Handle_GameState_Tick() { }
-
     public virtual void Handle_GameState_Start() { }
     public virtual void Handle_GameState_Start_Once() { }
-
     public virtual void Handle_GameState_Loading() { }
     public virtual void Handle_GameState_Loading_Once() { }
-
     public virtual void Handle_GameState_Playing() { }
     public virtual void Handle_GameState_Playing_Once() { }
-
     public virtual void Handle_GameState_Pause() { }
     public virtual void Handle_GameState_Pause_Once() { }
 
+}
+
+/// <summary>
+/// 模板Tick类
+/// </summary>
+public class MonoTemplate : MC_Tick_Base
+{
+    public override void Handle_GameState_Tick()
+    {
+        // 每帧调用，不依赖状态切换
+    }
+
+    public override void Handle_GameState_Start()
+    {
+        // Start状态下每帧调用
+    }
+
+    public override void Handle_GameState_Start_Once()
+    {
+        // Start状态切换进来时调用一次
+    }
+
+    public override void Handle_GameState_Loading()
+    {
+        // Loading状态下每帧调用
+    }
+
+    public override void Handle_GameState_Loading_Once()
+    {
+        // Loading状态切换进来时调用一次
+    }
+
+    public override void Handle_GameState_Playing()
+    {
+        // Playing状态下每帧调用
+    }
+
+    public override void Handle_GameState_Playing_Once()
+    {
+        // Playing状态切换进来时调用一次
+    }
+
+    public override void Handle_GameState_Pause()
+    {
+        // Pause状态下每帧调用
+    }
+
+    public override void Handle_GameState_Pause_Once()
+    {
+        // Pause状态切换进来时调用一次
+    }
 }

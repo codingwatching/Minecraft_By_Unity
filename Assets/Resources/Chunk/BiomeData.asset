@@ -16,7 +16,7 @@ MonoBehaviour:
     "\u6C27\u6C14\u6D53\u5EA6OxygenDensity": 0.4
     "\u4E09\u7EF4\u5BC6\u5EA6Density3d": 0.45
     "\u5E72\u71E5\u7A0B\u5EA6Aridity": 0.6
-    "\u7A7A\u6C14\u6E7F\u5EA6MoistureLevel": 0.6
+    "\u7A7A\u6C14\u6E7F\u5EA6MoistureLevel": 0.8
     biomenoisesystems:
     - BiomeName: "\u8349\u539F"
       BiomeColor: {r: 0.20392159, g: 0.77647066, b: 0.16470589, a: 0}
@@ -26,8 +26,8 @@ MonoBehaviour:
     - BiomeName: "\u9AD8\u539F"
       BiomeColor: {r: 1, g: 1, b: 1, a: 0}
       HighDomain: {x: 20, y: 160}
-      Noise_Scale_123: {x: 0.1, y: 0.01, z: 0.008}
-      Noise_Rank_123: {x: 0.1, y: 0.7, z: 0.2}
+      Noise_Scale_123: {x: 0.01, y: 0.01, z: 0.001}
+      Noise_Rank_123: {x: 1, y: 0.7, z: 0.2}
     - BiomeName: "\u6C99\u6F20"
       BiomeColor: {r: 1, g: 0.93725497, b: 0, a: 0}
       HighDomain: {x: 60, y: 100}
@@ -45,7 +45,7 @@ MonoBehaviour:
       Noise_Rank_123: {x: 0.5, y: 0.4, z: 0.1}
     terrainLayerProbabilitySystem:
       isRandomSeed: 1
-      Seed: 0
+      Seed: 32920288
       sea_level: 60
       Snow_Level: 100
       Normal_treecount: 3
